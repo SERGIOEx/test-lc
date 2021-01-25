@@ -15,6 +15,10 @@ class CreateProjectArticlesTable extends Migration
     {
         Schema::create('project_articles', function (Blueprint $table) {
             $table->id();
+            $table->integer('project_id')->unsigned();
+            $table->foreign('project_id')
+                ->references('id')->on('projects')
+                ->onDelete('cascade');
             $table->string('title');
             $table->text('content')->nullable();
         });
