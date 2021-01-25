@@ -15,7 +15,8 @@
         "laravel/framework": "^7.29",
         "laravel/tinker": "^2.5",
         "league/fractal": "^0.19.2",
-        "nwidart/laravel-modules": "^7.3"
+        "nwidart/laravel-modules": "^7.3",
+        "spatie/laravel-medialibrary": "^7.0.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.5",
