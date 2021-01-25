@@ -3,8 +3,6 @@
 namespace Modules\Project\Entities;
 
 use Illuminate\Database\Eloquent\Model;
-use Spatie\MediaLibrary\HasMedia\HasMedia;
-use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 
 /**
  * Class ProjectArticle
@@ -14,10 +12,16 @@ use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
  * @property string $title
  * @property string $content
  */
-class ProjectArticle extends Model implements HasMedia
+class ProjectArticle extends Model
 {
-    use HasMediaTrait;
-
     protected $fillable = ['project_id', 'title', 'content'];
     public $timestamps = false;
+
+    /**
+     * Get all of the contents for the project article.
+     */
+    public function contents()
+    {
+      // TODO: morphToMany Content model
+    }
 }

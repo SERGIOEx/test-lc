@@ -3,9 +3,6 @@
 namespace Modules\Project\Entities;
 
 use Illuminate\Database\Eloquent\Model;
-use Spatie\MediaLibrary\HasMedia\HasMedia;
-use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
-
 /**
  * Class ProjectUser
  * @package Modules\Project\Entities
@@ -14,10 +11,17 @@ use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
  * @property string $headline
  * @property string $first_name
  */
-class ProjectUser extends Model implements HasMedia
+class ProjectUser extends Model
 {
-    use HasMediaTrait;
 
     protected $fillable = ['project_id', 'headline', 'first_name'];
     public $timestamps = false;
+
+    /**
+     * Get all of the contents for the project users.
+     */
+    public function contents()
+    {
+        // TODO: morphToMany Content model
+    }
 }
