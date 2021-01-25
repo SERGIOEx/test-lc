@@ -45,10 +45,8 @@ RUN chmod +rx /usr/bin/composer
 
 COPY .env.example .env
 
-RUN composer install
+#RUN composer install
 
-RUN chmod +x ./entrypoint
-
-ENTRYPOINT ["./entrypoint"]
+RUN service nginx restart
 
 EXPOSE 80
