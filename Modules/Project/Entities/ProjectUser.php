@@ -18,10 +18,14 @@ class ProjectUser extends Model
     public $timestamps = false;
 
     /**
-     * Get all of the contents for the project users.
+     * Get all of the contents for the project article.
      */
-    public function contents()
+    public function projects()
     {
-        // TODO: morphToMany Content model
+        return $this->morphToMany(
+            Project::class,
+            'model',
+            'project_has_contents'
+        );
     }
 }

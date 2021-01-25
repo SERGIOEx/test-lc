@@ -20,8 +20,12 @@ class ProjectArticle extends Model
     /**
      * Get all of the contents for the project article.
      */
-    public function contents()
+    public function projects()
     {
-      // TODO: morphToMany Content model
+        return $this->morphToMany(
+            Project::class,
+            'model',
+            'project_has_contents'
+        );
     }
 }

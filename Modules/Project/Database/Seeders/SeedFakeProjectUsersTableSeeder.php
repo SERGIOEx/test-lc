@@ -21,7 +21,6 @@ class SeedFakeProjectUsersTableSeeder extends Seeder
         // generate
         for ($i = 0; $i < env('ENTITY_GENERATE_CNT'); $i++) {
             $data[] = [
-                'project_id' => random_int(1, env('ENTITY_GENERATE_CNT')),
                 'headline'   => $faker->name,
                 'first_name' => $faker->firstName
             ];
