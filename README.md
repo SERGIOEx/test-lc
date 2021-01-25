@@ -18,6 +18,9 @@
 - ```Modules```
 - ```App\Core```
 
+## Endpoits
+- ```{{url}}/api/projects/:id``` Get Project by Id
+
 
 ## TODO
 - Add actions: to add files for ProjectArticle and ProjectUser using the library
