@@ -18,7 +18,7 @@ class ProjectUser extends Model
     public $timestamps = false;
 
     /**
-     * Get all of the contents for the project article.
+     * Get Projects
      */
     public function projects()
     {
