@@ -15,10 +15,6 @@ class CreateProjectUsersTable extends Migration
     {
         Schema::create('project_users', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('project_id')->unsigned();
-            $table->foreign('project_id')
-                ->references('id')->on('projects')
-                ->onDelete('cascade');
             $table->string('headline');
             $table->string('first_name');
         });
