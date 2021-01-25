@@ -21,12 +21,16 @@ class SeedFakeProjectArticlesTableSeeder extends Seeder
 
         // generate
         for ($i = 0; $i < env('ENTITY_GENERATE_CNT'); $i++) {
-            $data[] = [
+
+            $project = Project::inRandomOrder()->first();
+
+            $article = ProjectArticle::create([
                 'title'      => $faker->name,
                 'content'    => $faker->text
-            ];
+            ]);
+
+            $article->projects()->save($project);
         }
 
-        ProjectArticle::insert($data);
     }
 }
