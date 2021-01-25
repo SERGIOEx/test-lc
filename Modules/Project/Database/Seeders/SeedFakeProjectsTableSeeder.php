@@ -2,12 +2,15 @@
 
 namespace Modules\Project\Database\Seeders;
 
+use App\Core\Modules\Media\MediaUploadTrait;
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
 use Modules\Project\Entities\Project;
 
 class SeedFakeProjectsTableSeeder extends Seeder
 {
+    use MediaUploadTrait;
+
     /**
      * Run the database seeds.
      *
@@ -16,6 +19,7 @@ class SeedFakeProjectsTableSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create(config('app.faker_locale'));
+
 
         // generate
         for ($i = 0; $i < env('ENTITY_GENERATE_CNT'); $i++) {

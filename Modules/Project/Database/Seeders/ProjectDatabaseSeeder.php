@@ -16,6 +16,8 @@ class ProjectDatabaseSeeder extends Seeder
     {
         Model::unguard();
 
+        // TODO: need use transaction
+
         $this->call(SeedFakeProjectsTableSeeder::class);
         $this->call(SeedFakeProjectArticlesTableSeeder::class);
         $this->call(SeedFakeProjectUsersTableSeeder::class);
