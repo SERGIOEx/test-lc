@@ -11,6 +11,7 @@
 
 - Clone and cd into this project
 - ```docker-compose up -d```
+- ```docker exec -it test_web bash```
 - ```php artisan migrate```
 - ```php artisan module:seed Project```
 
