@@ -1,79 +1,34 @@
 <?php
 
-namespace Modules\Project\Http\Controllers;
+namespace Modules\Project\Http\Controllers\API;
 
+use App\Core\Parents\Controllers\ApiController;
 use Illuminate\Contracts\Support\Renderable;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
+use Modules\Project\Services\ProjectService;
+use Modules\Project\Transformers\ProjectTransformer;
 
-class ProjectController extends Controller
+class ProjectController extends ApiController
 {
-    /**
-     * Display a listing of the resource.
-     * @return Renderable
-     */
-    public function index()
+    protected $service;
+
+    public function __construct(ProjectService $service)
     {
-        return view('project::index');
+        $this->service = $service;
     }
 
     /**
-     * Show the form for creating a new resource.
-     * @return Renderable
+     * @param $id
+     * @return JsonResponse
      */
-    public function create()
+    public function getById($id)
     {
-        return view('project::create');
-    }
+        $item = $this->service->findById($id);
 
-    /**
-     * Store a newly created resource in storage.
-     * @param Request $request
-     * @return Renderable
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+        return $this->json($item);
 
-    /**
-     * Show the specified resource.
-     * @param int $id
-     * @return Renderable
-     */
-    public function show($id)
-    {
-        return view('project::show');
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     * @param int $id
-     * @return Renderable
-     */
-    public function edit($id)
-    {
-        return view('project::edit');
-    }
-
-    /**
-     * Update the specified resource in storage.
-     * @param Request $request
-     * @param int $id
-     * @return Renderable
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     * @param int $id
-     * @return Renderable
-     */
-    public function destroy($id)
-    {
-        //
+        // TODO: send data to transformer
+        //return $this->transform($item, ProjectTransformer::class);
     }
 }
