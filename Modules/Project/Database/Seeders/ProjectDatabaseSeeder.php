@@ -16,6 +16,8 @@ class ProjectDatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        // $this->call("OthersTableSeeder");
+        $this->call(SeedFakeProjectsTableSeeder::class);
+        $this->call(SeedFakeProjectArticlesTableSeeder::class);
+        $this->call(SeedFakeProjectUsersTableSeeder::class);
     }
 }
