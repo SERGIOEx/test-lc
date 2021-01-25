@@ -12,7 +12,8 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+$controller = 'API\ProjectController';
 
-Route::middleware('auth:api')->get('/project', function (Request $request) {
-    return $request->user();
+Route::prefix('projects')->group(function () use ($controller) {
+    Route::get('/{id}', $controller . '@getById');
 });
