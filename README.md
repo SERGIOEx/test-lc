@@ -10,7 +10,7 @@
 ## Init this project
 
 - Clone and cd into this project
-- ```composer udpate```
+- ```docker-compose up -d```
 - ```php artisan migrate```
 - ```php artisan module:seed Project```
 
