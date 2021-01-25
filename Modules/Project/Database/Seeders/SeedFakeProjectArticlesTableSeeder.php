@@ -4,6 +4,7 @@ namespace Modules\Project\Database\Seeders;
 
 use Faker\Factory as Faker;
 use Illuminate\Database\Seeder;
+use Modules\Project\Entities\Project;
 use Modules\Project\Entities\ProjectArticle;
 
 class SeedFakeProjectArticlesTableSeeder extends Seeder
@@ -12,6 +13,7 @@ class SeedFakeProjectArticlesTableSeeder extends Seeder
      * Run the database seeds.
      *
      * @return void
+     * @throws \Exception
      */
     public function run()
     {
@@ -20,8 +22,9 @@ class SeedFakeProjectArticlesTableSeeder extends Seeder
         // generate
         for ($i = 0; $i < env('ENTITY_GENERATE_CNT'); $i++) {
             $data[] = [
-                'title'   => $faker->name,
-                'content' => $faker->text
+                'project_id' => random_int(1, env('ENTITY_GENERATE_CNT')),
+                'title'      => $faker->name,
+                'content'    => $faker->text
             ];
         }
 
