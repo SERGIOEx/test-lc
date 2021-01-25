@@ -14,6 +14,6 @@ use Illuminate\Database\Eloquent\Model;
  */
 class ProjectUser extends Model
 {
-    protected $fillable = ['headline', 'first_name'];
+    protected $fillable = ['project_id', 'headline', 'first_name'];
     public $timestamps = false;
 }

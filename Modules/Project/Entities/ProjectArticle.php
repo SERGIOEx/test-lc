@@ -14,6 +14,6 @@ use Illuminate\Database\Eloquent\Model;
  */
 class ProjectArticle extends Model
 {
-    protected $fillable = ['title', 'content'];
+    protected $fillable = ['project_id', 'title', 'content'];
     public $timestamps = false;
 }
