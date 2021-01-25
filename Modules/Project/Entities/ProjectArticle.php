@@ -3,6 +3,8 @@
 namespace Modules\Project\Entities;
 
 use Illuminate\Database\Eloquent\Model;
+use Spatie\MediaLibrary\HasMedia\HasMedia;
+use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 
 /**
  * Class ProjectArticle
@@ -12,8 +14,10 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $title
  * @property string $content
  */
-class ProjectArticle extends Model
+class ProjectArticle extends Model implements HasMedia
 {
+    use HasMediaTrait;
+
     protected $fillable = ['project_id', 'title', 'content'];
     public $timestamps = false;
 }

@@ -19,6 +19,7 @@ class CreateProjectHasContentsTable extends Migration
             $table->foreign('project_id')
                 ->references('id')->on('projects')
                 ->onDelete('cascade');
+            $table->integer('file_id')->unsigned();
             $table->integer('entity_id')->unsigned();
             $table->string('entity_type');
         });

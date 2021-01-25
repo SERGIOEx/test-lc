@@ -15,6 +15,6 @@ use Illuminate\Database\Eloquent\Model;
  */
 class ProjectHasContent extends Model
 {
-    protected $fillable = ['project_id', 'entity_id', 'entity_type'];
+    protected $fillable = ['project_id', 'file_id', 'entity_id', 'entity_type'];
     public $timestamps = false;
 }
