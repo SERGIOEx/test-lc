@@ -11,6 +11,7 @@
 
 - Clone and cd into this project
 - ```docker-compose up -d```
+- ```docker exec -it test_web bash```
 - ```php artisan migrate```
 - ```php artisan module:seed Project```
 
@@ -25,5 +26,4 @@
 ## TODO
 - Add actions: to add files for ProjectArticle and ProjectUser using the library
 - Init new module and service class - Content
-- Add/upd polymorphic relationships — Many To Many
 - Create new endpoints
