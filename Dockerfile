@@ -45,7 +45,7 @@ RUN chmod +rx /usr/bin/composer
 
 COPY .env.example .env
 
-#RUN composer install
+RUN composer install
 
 RUN service nginx restart
 
