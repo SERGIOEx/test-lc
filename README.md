@@ -24,6 +24,3 @@
 
 
 ## TODO
-- Add actions: to add files for ProjectArticle and ProjectUser using the library
-- Init new module and service class - Content
-- Create new endpoints
